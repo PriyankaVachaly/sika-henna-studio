@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sika Henna Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #4b2e2e;
+    }
+    nav {
+      background-color: #8b5e3c;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #a0522d;
+    }
+
+    header {
+      background-color: #a0522d;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header img {
+      width: 180px;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .section {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .about {
+      background-color: #fff0e6;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .about h2 {
+      color: #8b4513;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .fullscreen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.fullscreen button {
+  font-size: 2rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+    #aftercare {
+  background-color: #fff7f0;
+  border: 2px dashed #d2691e;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+
+#aftercare h2 {
+  color: #a0522d;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+#aftercare ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#aftercare li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#aftercare li::before {
+  content: "🌿";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+    .contact {
+      background-color: #fce6cc;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: #8b5e3c;
+      color: white;
+      text-align: center;
+      padding: 0.75rem;
+      font-size: 0.9rem;
+      
+    }
+  </style>
+</head>
+<body>
+     <nav>
+    <a href="index.html">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#aftercare">Aftercare Instructions</a>
+    <a href="#contactus">Contact Us</a>
+  </nav>
+  <header>
+    
+    <img src="images/logo.JPG" alt="Sika Henna Studio Logo">
+    <h1>Sika Henna Studio</h1>
+    <div class="tagline">
+      Organic • Pain-free • Temporary • No Chemicals • For All Ages <br>
+      Confused about permanent tattoos? Try a beautiful, temporary one with us!
+    </div>
+  </header>
+  
+
+  <div class="section about" id="about">
+    <h2>About Us</h2>
+    <p>Welcome to Sika Henna Studio! We are Shilpa and Priyanka, two passionate artists who believe in celebrating beauty through traditional and modern henna designs.</p>
+    <p>Shilpa is a fashion designer and Priyanka is a data scientist, and henna has always been our true creative passion. Sika Henna Studio is our small business built from love, culture, and artistry, and your support helps us continue doing what we love. Thank you for being part of our journey.</p>
+    <p>We proudly attend events, festivals, birthdays, baby showers, and vendor shows. Whether you're 5 or 85, we have a design perfect for you!</p>
+    <p><strong>✨ Let your hands do the talking — express yourself with our art.</strong></p>
+  </div>
+
+  <div class="section" id="gallery">
+    <h2>Choose Your Design </h2>
+    <div class="gallery">
+      <img src="images/IMG_2132.PNG" alt="Henna Design 1" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2133.PNG" alt="Henna Design 2" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2134.PNG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2135.PNG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2136.PNG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2139.PNG" alt="Henna Design 1" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2154.JPG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2155.JPG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2156.JPG" alt="Henna Design 1" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2158.JPG" alt="Henna Design 2" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2159.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2160.JPG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2161.JPG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2163.JPG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2165.JPG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2166.JPG" alt="Henna Design 1" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2168.JPG" alt="Henna Design 2" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2169.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2170.JPG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2171.JPG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2173.JPG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2174.JPG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2178.JPG" alt="Henna Design 1" onclick="openFullscreen(this.src)">
+      <img src="henna2.jpg" alt="Henna Design 2" onclick="openFullscreen(this.src)">
+      <img src="./images/henna3.jpg" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="./images/henna4.jpg" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="./images/henna5.jpg" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2146.PNG" alt="Henna Design 2" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2149.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2150.JPG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/IMG_2151.JPG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="./images/henna6.jpg" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="./images/henna9.jpg" alt="Henna Design 2" onclick="openFullscreen(this.src)">
+      <img src="./images/henna10.jpg" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/11.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/1.PNG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/2.PNG" alt="Henna Design 2" onclick="openFullscreen(this.src)">
+      <img src="images/3.PNG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/4.PNG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/5.PNG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/6.PNG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/7.PNG" alt="Henna Design 2" onclick="openFullscreen(this.src)">
+      <img src="images/8.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/9.JPG" alt="Henna Design 4" onclick="openFullscreen(this.src)">
+      <img src="images/12.JPG" alt="Henna Design 2" onclick="openFullscreen(this.src)">
+      <img src="images/13.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/14.JPG" alt="Henna Design 2" onclick="openFullscreen(this.src)">
+      <img src="images/15.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/16.JPG" alt="Henna Design 2" onclick="openFullscreen(this.src)">
+      <img src="images/a.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/b.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/c.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/d.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/e.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/f.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/g.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/h.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/i.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/j.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/k.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/l.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/m.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/n.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/o.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+      <img src="images/p.JPG" alt="Henna Design 3" onclick="openFullscreen(this.src)">
+
+
+
+
+      
+
+
+      <!-- Add more images here -->
+    </div>
+  </div>
+
+  <div class="fullscreen" id="fullscreen">
+  <button onclick="prevImage()" style="position:absolute; left: 20px; font-size: 2rem; background: none; color: white; border: none; cursor: pointer;">⟵</button>
+  <img id="fullscreenImg" src="" alt="Full Design" style="max-height: 90%; border-radius: 10px;">
+  <button onclick="nextImage()" style="position:absolute; right: 20px; font-size: 2rem; background: none; color: white; border: none; cursor: pointer;">⟶</button>
+  <button onclick="closeFullscreen()" style="position: absolute; top: 20px; right: 20px; font-size: 2rem; background: none; color: white; border: none; cursor: pointer;">✕</button>
+</div>
+
+  <div class="section" id="aftercare">
+    <h2>Aftercare Instructions</h2>
+    <p>To get the best stain and longevity from your henna design:</p>
+    <ul>
+      <li>Leave the paste on for at least 1-2 hours.</li>
+      <li>Keep the area warm and avoid water contact while the paste is on.</li>
+      <li>Once dry, scrape off the paste gently, do not wash it off with water.</li>
+      <li>Avoid soap and water on the area for 24 hours after paste removal.</li>
+      <li>Apply a natural oil like coconut or olive oil to preserve the stain.</li>
+    </ul>
+  </div>
+
+  <div class="section contact" id = "contactus">
+    <h2>Contact Us</h2>
+    <p><i class="fas fa-envelope"> </i> Email: <a href="mailto:myjobspersonalmail@gmail.com">myjobspersonalmail@gmail.com</a></p>
+    <p><i class="fab fa-instagram"></i> Follow us on Instagram : <strong><a href="https://www.instagram.com/sikahenna/">@sikahenna</a></strong></p>
+    <p><i class="fab fa-facebook"></i> Follow us on Facebook : <a href="https://www.facebook.com/share/18HhfiuzHY/?mibextid=wwXIfr">Sika Henna Studio</a></p>
+    <p>We bring henna magic to your events — Book us today!</p>
+  </div>
+
+  <footer>
+    <p>Disclaimer: Images used are for reference purposes only. All rights belong to their respective owners.</p>
+    &copy; 2025 Sika Henna Studio. All Rights Reserved.
+  </footer>
+
+  <script>
+  const images = Array.from(document.querySelectorAll('.gallery img'));
+  const fullscreen = document.getElementById('fullscreen');
+  const fullscreenImg = document.getElementById('fullscreenImg');
+  let currentIndex = 0;
+
+  function openFullscreen(src) {
+    currentIndex = images.findIndex(img => img.src === src);
+    showImage();
+    fullscreen.style.display = 'flex';
+  }
+
+  function closeFullscreen() {
+    fullscreen.style.display = 'none';
+  }
+
+  function showImage() {
+    if (currentIndex >= 0 && currentIndex < images.length) {
+      fullscreenImg.src = images[currentIndex].src;
+    }
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+  }
+
+  // Optional: Close on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeFullscreen();
+    else if (e.key === 'ArrowRight') nextImage();
+    else if (e.key === 'ArrowLeft') prevImage();
+  });
+</script>
+
+</body>
+</html>
